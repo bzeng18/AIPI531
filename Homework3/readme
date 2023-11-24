@@ -1,6 +1,11 @@
 Task: Include item features as side information for cold items with the DRL recommenders mentioned in https://arxiv.org/abs/2111.03474 [DRL2]
 Include a performance comparison between the recommenders with and without item features.
 
+Data: Due to the size limit, data files are unble to be stored in github. The new csv which contains the item features was created and the
+data processing code was in Homework3.ipynb
+
+Code: Homework3.ipynb has the result details and SNQN_features.py contains the new model
+
 Result: 
 With item features for 5 epochs and lambda=0.1:
 
