@@ -1,0 +1,46 @@
+Task: Include item features as side information for cold items with the DRL recommenders mentioned in https://arxiv.org/abs/2111.03474 [DRL2]
+Include a performance comparison between the recommenders with and without item features.
+
+Result: 
+With item features for 5 epochs and lambda=0.1:
+
+total clicks: 118306, total purchase:5291
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 5: 6750.200000
+clicks hr ndcg @ 5 : 0.197167, 0.146082
+purchase hr and ndcg @5 : 0.394065, 0.308342
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 10: 8312.000000
+clicks hr ndcg @ 10 : 0.248846, 0.162775
+purchase hr and ndcg @10 : 0.458136, 0.329037
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 15: 9262.000000
+clicks hr ndcg @ 15 : 0.279614, 0.170921
+purchase hr and ndcg @15 : 0.500095, 0.340109
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 20: 9879.000000
+clicks hr ndcg @ 20 : 0.300196, 0.175784
+purchase hr and ndcg @20 : 0.524665, 0.345921
+
+Without item features for 5 epochs:
+
+total clicks: 118306, total purchase:5291
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 5: 8948.600000
+clicks hr ndcg @ 5 : 0.260367, 0.203107
+purchase hr and ndcg @5 : 0.526933, 0.442854
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 10: 10370.600000
+clicks hr ndcg @ 10 : 0.310491, 0.219346
+purchase hr and ndcg @10 : 0.571537, 0.457284
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 15: 11126.400000
+clicks hr ndcg @ 15 : 0.337447, 0.226488
+purchase hr and ndcg @15 : 0.593839, 0.463235
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cumulative reward @ 20: 11658.200000
+clicks hr ndcg @ 20 : 0.356542, 0.230997
+purchase hr and ndcg @20 : 0.608959, 0.466817
+
+Conclusion: The model without item features performs slightly better than the model with item features when lambda=0.1. 
+However, with hyperparameter tuning, the model with item features have a greater potential.
