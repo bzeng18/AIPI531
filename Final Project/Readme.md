@@ -31,6 +31,28 @@ u.data and u.item from the MovieLens_100K dataset are used. The Data is first fi
 1. **LLM.ipynb**: This notebook includes all ranks of data ignoring the ranks users gave to the movies. The target is randomly selected from the movies a user watched.
 2. **LLM_rating.ipynb**: This notebook includes only high ranks of data that users gave scores of 4 or 5 to the movies. The dataset focused predicting users' favorite movies. The target is randomly selected from the movies a user watched.
 3. **LLM_rating_latest.ipynb**: This notebook includes only high ranks of data that users gave scores of 4 or 5 to the movies. The dataset focused predicting users' favorite movies. The target is chosen to be the latest movie a user watched.
+
+
+## Prompt Engineering
+We experimented three different types of prompts along with our baseline prediction to evaluate the performace using number of hits as metrics. The prompts are applied on all three datasets. Here are the details:
+
+1. Simple Prompt: prompt = """
+        Candidate Set (candidate movies): {}. The movies I have watched (watched movies): {}.
+        Can you recommend 10 movies from the Candidate Set similar to the movies I've watched (Format: [<- a candidate movie ->]). """
+2. Prompt with three-steps which let the LLM think internally about users preferences then make decision:  """
+        Candidate Set (candidate movies): {}. The movies I have watched (watched movies): {}.
+        Step 1: What features are mst important to me when selecting movies(Summarize my preferences briefly)?
+        Step 2: You will select the movies(at most 5 movies) that appeal to me the most from the movies I have watched, based on my personal preferences. Do not make recommandation yet.
+        Step 3: Can you recommend 10 movies from the Candidate Set similar to the movies I've watched and selected in Step 2(Format: [no. a watched movie :<-a candidate movie ->])?
+    """
+3. Prompt with four-steps and input genre for all candidate movies so that LLM has a better idea on how to classify movies:
+   """
+        Candidate Set (candidate movies with genre): {}. The movies I have watched (watched movies): {}.
+        Step 1: Find out the movie genres for all the movies I watched.
+        Step 2: What features and movie genres are most important to me when selecting movies(Summarize my preferences)?
+        Step 3: You will select the movies that appeal to me the most from the movies I have watched, based on my personal preferences and genres. Do not make recommandation yet.
+        Step 4: Can you recommend 10 movies from the Candidate Set similar to the movies I've watched and selected in Step 3(Format: [no. a watched movie :<-a candidate movie ->])?
+    """
    
 ## How to Reproduce Results
 
@@ -44,8 +66,6 @@ In the Baseline Recommender.ipynb notebook, we have implemented a baseline recom
 **Similarity Calculation:** To find similar movies, we used a technique called cosine similarity. This technique measures the cosine of the angle between two vectors, giving us a measure of how similar they are.
 
 **Weighted Rating Calculation:** We also used a weighted rating formula to calculate a score for each movie. This score was based on the movie's average rating and the number of ratings it has received. The formula helps to give a more balanced recommendation by considering both the rating and popularity of the movie.
-
-**Evaluation:** We evaluated the performance of our recommender system using precision, recall, and F1-score. These metrics give us a measure of the effectiveness of our recommendations.
 
 To execute the code and run specific tasks, use the following commands:
 
@@ -62,7 +82,7 @@ Note: Ensure that the code files and dataset are appropriately configured in you
 
 
 
-### LLM recommender
+### LLM Recommender
 1. Clone the repository: ```git clone git@github.com:bzeng18/AIPI531.git```
 2. Open Final Project folder
 3. Install the libraries with right version: ```pip install -r requirements.txt```
