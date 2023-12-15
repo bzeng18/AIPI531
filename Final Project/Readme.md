@@ -17,7 +17,7 @@ This repository contains the final project for AIPI 531 (Fall 2023), focusing on
 
 The repository is organized as follows:
 
-1. **Baseline-recommender**: Contains the ideas of some baseline recommenders, content based approaches, with users and items features embedded.
+1. **Baseline-recommender**: Contains the ideas of some baseline recommenders with collaborative-filtering based approaches
 
 2. **ml-100k**: Includes the MovieLens_100K dataset
 
