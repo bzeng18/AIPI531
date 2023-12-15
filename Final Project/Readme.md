@@ -94,13 +94,28 @@ Note: Ensure that the code files and dataset are appropriately configured in you
 
 ## Summary of Findings
 
-|                                  | Randomly selected target | High-ranked target | High-ranked data and latest target|
+|                                  | Randomly selected target | High-ranked data   | High-ranked data and latest target|
 | -------------------------------- | -------------------------| ------------------ | --------------------------------- |
 |Baseline(10 most popular)         | 10.67                  % | 8                % | 3.67                            % | 
 |Simple Prompt                     | 7.33                   % | 14               % | 1.33                            % | 
 |Three-steps Prompt                | 11                     % | 10               % | 2.67                            % | 
 |Four-steps Prompt with Genre      | 20                     % | 19               % | 19                              % | 
 
+## Conclusion
+
+There are some insights we could gain from the findings:
+1. The four-steps prompt with genre outperforms a lot in all three cases which means that LLM-based recommender could be improved by feeding some directions or classification to the LLM.
+2. Three-steps prompt has a better performance overall but the differences are not obvious and unstable which indicates that the LLM model does not have a good ability in reasoning without data.
+3. Overall, the LLM-based recommender is unstable and changing a few words in prompts would generate a totally different prediction result.
+
+## Limitations 
+1. There is a cost of using OpenAI API and it's time consuming to get a response with long inputs. As a result, only 300 users and 100 movies have been tested
+2. A more specific prompt structure could be used in each task but in order to make them comparable, we decided to use general prompts.
+
+## Future explorations
+1. Other open source models
+2. Use a stream of prompts rather than input a single one
+3. More offline metrics such as similarity scores could be used
 
 ## MovieLens_100K Dataset Summary & Usage License
 
