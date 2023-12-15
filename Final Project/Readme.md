@@ -33,7 +33,20 @@ u.data and u.item from the MovieLens_100K dataset are used. The Data is first fi
 3. **LLM_rating_latest.ipynb**: This notebook includes only high ranks of data that users gave scores of 4 or 5 to the movies. The dataset focused predicting users' favorite movies. The target is chosen to be the latest movie a user watched.
    
 ## How to Reproduce Results
-### Baseline Exploration
+
+### Baseline Recommender
+In the Baseline Recommender.ipynb notebook, we have implemented a baseline recommender system using several techniques:
+
+**Data Analysis:** We used pandas for data loading and preprocessing, and to perform exploratory data analysis (EDA) to understand the underlying patterns and trends in the data.
+
+**Recommendation Techniques:** The baseline recommender system was built using simple statistical techniques. For user-based recommendations, we calculated the average rating given by each user and recommended movies that the user hasn't seen yet but have high average ratings. For item-based recommendations, we calculated the average rating for each movie and recommended the top-rated movies.
+
+**Similarity Calculation:** To find similar movies, we used a technique called cosine similarity. This technique measures the cosine of the angle between two vectors, giving us a measure of how similar they are.
+
+**Weighted Rating Calculation:** We also used a weighted rating formula to calculate a score for each movie. This score was based on the movie's average rating and the number of ratings it has received. The formula helps to give a more balanced recommendation by considering both the rating and popularity of the movie.
+
+**Evaluation:** We evaluated the performance of our recommender system using precision, recall, and F1-score. These metrics give us a measure of the effectiveness of our recommendations.
+
 To execute the code and run specific tasks, use the following commands:
 
 ```bash
@@ -42,11 +55,12 @@ python3 utils/baseline_recommender.py item_based 123 10
 python3 utils/baseline_recommender.py similar_movies 123 10 --target_movie_name "Toy Story (1995)"
 ```
 
-Replace the placeholder values (e.g., `123`, `10`, `"Toy Story (1995)"`) with the appropriate inputs based on your requirements. These commands are examples and assume that a Python environment is set up with the necessary dependencies installed.
+"
+Replace the placeholder values (e.g., 123, 10, "Toy Story (1995)") with the appropriate inputs based on your requirements. Adjust the parameters and options as needed to perform user-based recommendation, item-based recommendation, or find similar movies based on the specified target movie.
 
-Adjust the parameters and options as needed to perform user-based recommendation, item-based recommendation, or find similar movies based on the specified target movie.
+Note: Ensure that the code files and dataset are appropriately configured in your working directory before running these commands.
 
-*Note: Ensure that the code files and dataset are appropriately configured in your working directory before running these commands.*
+
 
 ### LLM recommender
 1. Clone the repository: ```git clone git@github.com:bzeng18/AIPI531.git```
