@@ -23,13 +23,12 @@ The repository is organized as follows:
 
 1. **Code**: Contains the implementation of LLM-based item recommenders, prompt engineering approaches, and baseline recommenders.
 
-2. **Datasets**: Includes the MovieLens_100K dataset and documentation on how to incorporate additional datasets.
+2. **ml-100k**: Includes the MovieLens_100K dataset
 
-3. **Experiments**: Provides detailed information on the experiments conducted, including code, configurations, and results.
+3. **Baseline Recommender.ipynb**: The "Baseline Recommender.ipynb" notebook contains code and analysis for a baseline recommender system.
 
-4. **Results**: Presents the results of the experiments, comparing the performance of LLMs and the baseline recommender based on various metrics.
+4. **LLM.ipynb**: Presents the results of the experiments, comparing the performance of LLMs and the baseline recommender based on various metrics.
 
-5. **Docs**: Contains documentation for reproducing the results, running the code, and understanding the prompt engineering approaches.
 
 ## How to Reproduce Results
 
