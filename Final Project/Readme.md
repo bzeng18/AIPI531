@@ -69,6 +69,8 @@ In the Baseline Recommender.ipynb notebook, we have implemented a baseline recom
 
 **Weighted Rating Calculation:** We also used a weighted rating formula to calculate a score for each movie. This score was based on the movie's average rating and the number of ratings it has received. The formula helps to give a more balanced recommendation by considering both the rating and popularity of the movie.
 
+**Evaluation:** We evaluated the performance of our recommender system using RMSE, MAE. These metrics give us a measure of the effectiveness of our recommendations.
+
 To execute the code and run specific tasks, use the following commands:
 
 ```bash
