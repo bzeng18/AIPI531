@@ -43,7 +43,7 @@ A brief summary of the key findings and insights derived from the experiments is
 
 For any questions or issues related to package installation or other technical difficulties, please contact the Teaching Assistant (TA) mentioned in the troubleshooting section. While the primary responsibility lies with the student, the TA is available to assist in resolving any installation issues.
 
-## How to Run
+## How to Run (Baseline Recommender)
 
 To execute the code and run specific tasks, use the following commands:
 
