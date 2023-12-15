@@ -29,6 +29,7 @@ The repository is organized as follows:
 
 4. **LLM.ipynb**: Presents the results of the experiments, comparing the performance of LLMs and the baseline recommender based on various metrics.
 
+5. **baseline_recommender.py**: A script for generating movie recommendations using user-based, item-based, or similar movies methods, with command-line arguments for customization.
 
 ## How to Reproduce Results
 
@@ -41,6 +42,22 @@ A brief summary of the key findings and insights derived from the experiments is
 ## Troubleshooting
 
 For any questions or issues related to package installation or other technical difficulties, please contact the Teaching Assistant (TA) mentioned in the troubleshooting section. While the primary responsibility lies with the student, the TA is available to assist in resolving any installation issues.
+
+## How to Run
+
+To execute the code and run specific tasks, use the following commands:
+
+```bash
+python3 utils/baseline_recommender.py user_based 123 10
+python3 utils/baseline_recommender.py item_based 123 10
+python3 utils/baseline_recommender.py similar_movies 123 10 --target_movie_name "Toy Story (1995)"
+```
+
+Replace the placeholder values (e.g., `123`, `10`, `"Toy Story (1995)"`) with the appropriate inputs based on your requirements. These commands are examples and assume that a Python environment is set up with the necessary dependencies installed.
+
+Adjust the parameters and options as needed to perform user-based recommendation, item-based recommendation, or find similar movies based on the specified target movie.
+
+*Note: Ensure that the code files and dataset are appropriately configured in your working directory before running these commands.*
 
 ## MovieLens_100K Dataset Summary & Usage License
 
