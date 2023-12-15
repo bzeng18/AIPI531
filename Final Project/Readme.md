@@ -34,18 +34,19 @@ u.data and u.item from the MovieLens_100K dataset are used. The Data is first fi
 
 
 ## Prompt Engineering
+
 We experimented three different types of prompts along with our baseline prediction to evaluate the performace using number of hits as metrics. The prompts are applied on all three datasets. Here are the details:
 
-1. Simple Prompt: prompt = """
+1. Simple Prompt:"""
         Candidate Set (candidate movies): {}. The movies I have watched (watched movies): {}.
         Can you recommend 10 movies from the Candidate Set similar to the movies I've watched (Format: [<- a candidate movie ->]). """
-2. Prompt with three-steps which let the LLM think internally about users preferences then make decision:  """
+3. Prompt with three-steps which let the LLM think internally about users preferences then make decision:  """
         Candidate Set (candidate movies): {}. The movies I have watched (watched movies): {}.
         Step 1: What features are mst important to me when selecting movies(Summarize my preferences briefly)?
         Step 2: You will select the movies(at most 5 movies) that appeal to me the most from the movies I have watched, based on my personal preferences. Do not make recommandation yet.
         Step 3: Can you recommend 10 movies from the Candidate Set similar to the movies I've watched and selected in Step 2(Format: [no. a watched movie :<-a candidate movie ->])?
     """
-3. Prompt with four-steps and input genre for all candidate movies so that LLM has a better idea on how to classify movies:
+4. Prompt with four-steps and input genre for all candidate movies so that LLM has a better idea on how to classify movies:
    """
         Candidate Set (candidate movies with genre): {}. The movies I have watched (watched movies): {}.
         Step 1: Find out the movie genres for all the movies I watched.
@@ -57,6 +58,7 @@ We experimented three different types of prompts along with our baseline predict
 ## How to Reproduce Results
 
 ### Baseline Recommender
+
 In the Baseline Recommender.ipynb notebook, we have implemented a baseline recommender system using several techniques:
 
 **Data Analysis:** We used pandas for data loading and preprocessing, and to perform exploratory data analysis (EDA) to understand the underlying patterns and trends in the data.
@@ -83,6 +85,7 @@ Note: Ensure that the code files and dataset are appropriately configured in you
 
 
 ### LLM Recommender
+
 1. Clone the repository: ```git clone git@github.com:bzeng18/AIPI531.git```
 2. Open Final Project folder
 3. Install the libraries with right version: ```pip install -r requirements.txt```
